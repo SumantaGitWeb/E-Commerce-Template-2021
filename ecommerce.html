@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>E-Commerce Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Quicksand|Abril+Fatface|Permanent+Marker">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://unpkg.com/alpinejs" defer></script>
+<style>
+body {
+  margin: 0;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 1.8;
+}
+p {
+margin-top: 10px;
+}
+img {
+width:50%;
+margin: auto;
+border-radius: 10px;
+}
+a:hover {
+color: rgb(23,23,23)
+}
+.item-cards{
+  background-image: linear-gradient(45deg, #f2f2f2, #63a2ff);
+  background-size: 30em;
+  background-position: left;
+  transition: background-position 0.7s;
+}
+.item-cards:hover{
+  background-position: right;
+}
+.a {
+  display: flex;
+  flex-direction: row;z-index: -100;margin-right: 10px;
+}
+
+.b {
+  padding: 10px;
+  flex: 50%;
+}
+
+.c {
+  padding: 10px;
+  flex: 50%;
+}
+
+.d{
+  padding: 10px;
+  flex: 50%;
+}
+.b, .c, .d {
+text-align: center;
+}
+h1 {
+font-size: 32px;
+}
+.aa {
+background-color: rgb(255, 143, 143);
+}
+.ab {
+background-color: rgb(123,255,123);
+}
+.ac {
+background-color: rgb(123,123,255);
+}
+.ad {
+background-color: rgb(123,123,123);
+}
+  .bn{
+            position: relative;
+        }
+        .bn::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(255, 115, 0);
+
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 250ms ease-in;
+        }
+        .bn:hover::after{
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+        .bar:hover{
+          cursor: pointer;
+        }
+@media (max-width: 600px) {
+  .a {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+  <a href="#top" style="position: fixed; bottom: 10; right: 10;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg>
+  </a>
+
+<nav style="text-align: center;padding: 10px;position: fixed;background: rgb(23,23,23);width: 60px;height: 100%;box-shadow: 5px 5px rgba(255,40,40, 1);top: 0;">
+
+<img src="https://github.com/subhransuindia/Pictures/blob/main/Presentation1.png?raw=true" style="padding: 2.5px;color: white;width: 90px;border-radius: 50%;margin-bottom: -20px;"><br>
+
+<button onclick="search()" class="fa fa-search" style="padding: 5px;border-radius: 50%;border:0;background: rgba(0,255,0,0.5);"></button>
+
+<div id="search" style="display: flex;position: absolute;left: -300%;transition: 1s;top: 50px;">
+  <input  placeholder="Search" style="padding: 5px;border: 2px solid black;border-radius: 60px;font-family: Poppins;width: 100px;margin-top: 10px;text-align: center;">
+  <button  onclick="c()" style="border-radius: 50%;border:0;background: transparent;margin-left:  10px; margin-top: 5px;">X</button>
+  </div>
+
+<tagname class="fa fa-shopping-cart" style="margin-top: 10px;padding: 5px;color: white;"></tagname>
+
+</nav>
+
+<nav id="top" style="text-align: right;width: 100%;top:0;margin-left: 0px; padding: 5px;">
+<tagname onclick="a()" style="text-shadow: 2px 2px rgba(0,255,255,0.5);margin-right: 90px;font-weight: 600;" class="bar text-3xl">☰</tagname>
+</nav>
+
+<div id="navbar" style="z-index: 1; position: fixed;background-color: #dceff5;width: 50%;height: 100%;right: -100%;transition: 1s;top:0;">
+<tagname onclick="b()" style="padding: 10px;margin-left: 35%;" class="bar">X</tagname>
+<div style="margin-top: 100px;margin-left: 5vw;font-size: 17px;">
+<a style="color: black;" href="#" class="bn"><p>Electronics</p></a>
+<a style="color: black;" href="" class="bn"><p>TV and Appliances</p></a>
+<a style="color: black;" href="" class="bn"><p>Men</p></a>
+<a style="color: black;" href="" class="bn"><p>Women</p></a>
+<a style="color: black;" href="" class="bn"><p>Baby and Kids</p></a>
+<a style="color: black;" href="" class="bn"><p>Home and Furniture</p></a>
+<a style="color: black;" href="" class="bn"><p>Sports, Books and More</p></a>
+</div>
+</div>
+
+<div style="margin-top: 50px;margin-left: 60px;text-align: center;">
+
+<div class="bg-blue-200" style="text-align: center;">
+        <div class="p-20 flex flex-col md:flex-row">
+            <div class="text-gray-800 m-auto">
+                <div class="text-7xl font-black" style="font-size: 48px;">The Things you all need</div>
+                <div class="font-thin text-3xl mt-3">We have all types of things <br>
+                  from A - Z!
+                </div>
+                <div class="mt-20">
+                    <a href="#" class="bn py-4 text-3xl rounded-xl" style="color: rgb(255, 115, 0);">Buy Now</a>
+                </div>
+            </div>
+            <div class="">
+                <img src="https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/a/p/apple_watch_se_fileminimizer_.png" style="width: 20em;margin: auto;margin-top: 60px; ">
+            </div>
+        </div>
+    </div>
+
+<div class="t aa">
+  <div class="text-4xl p-3 text-left">
+    Heavy Discounts!
+  </div>
+  <div class="mx-4 md:flex md:justify-between p-4">
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Men Clothes</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Women Clothes</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Kid Clothes</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Furniture</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+  </div>
+</div>
+
+<div class="t ab">
+  <div class="text-4xl p-3 text-left">
+    New Arrivals
+  </div>
+  <div class="mx-4 md:flex md:justify-between p-4">
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/815494/pexels-photo-815494.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Headphones</div>
+      <div class="font-thin">Rs. 999 - <br>
+      Rs. 7,999
+      </div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Computers</div>
+      <div class="font-thin">Rs. 8,999 - <br>
+        Rs. 3,99,999</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Smartphones</div>
+      <div class="font-thin">Rs. 4,999 - <br>
+        Rs. 1,99,999</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/901947/pexels-photo-901947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Moonscope X2Z</div>
+      <div class="font-thin">Rs. 1,299 - <br>
+        Rs. 29,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="t ac">
+  <div class="text-4xl p-3 text-left">
+   Best Sellers!
+  </div>
+  <div class="mx-4 md:flex md:justify-between p-4">
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://ih1.redbubble.net/image.622765050.0692/fposter,small,wall_texture,product,750x1000.u2.jpg" alt="">
+      <div class="text-black font-bold mt-2">Posters</div>
+      <div class="font-thin">Rs. 999 - <br>
+        Rs. 7,999</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.samsung.com/is/image/samsung/p6pim/levant/sm-g991bzvdmea/gallery/levant-galaxy-s21-5g-g991-sm-g991bzvdmea-thumb-388257309?$264_264_PNG$" alt="">
+      <div class="text-black font-bold mt-2">Smartphones</div>
+      <div class="font-thin">Rs. 999 - <br>
+        Rs. 7,999</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://static01.nyt.com/images/2019/12/17/books/review/17fatbooks/17fatbooks-superJumbo.jpg" alt="">
+      <div class="text-black font-bold mt-2">Kid Clothes</div>
+      <div class="font-thin">Rs. 999 - <br>
+        Rs. 7,999</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://m.media-amazon.com/images/I/71AaH5W7c1L._SL1500_.jpg" alt="">
+      <div class="text-black font-bold mt-2">Furniture</div>
+      <div class="font-thin">Rs. 999 - <br>
+        Rs. 7,999</div>
+    </div>
+  </div>
+</div>
+
+<div class="t ad">
+  <div class="text-4xl p-3 text-left">
+    Heavy Discounts!
+  </div>
+  <div class="mx-4 md:flex md:justify-between p-4">
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Men Clothes</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Women Clothes</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Kid Clothes</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+    <div class="item-cards p-3 rounded-lg mt-2 md:mt-0">
+      <img class="w-40 rounded-lg" src="https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+      <div class="text-black font-bold mt-2">Furniture</div>
+      <div class="font-thin">20% OFF</div>
+    </div>
+  </div>
+</div>
+
+
+<div style="background-color: rgb(255,40,40);text-align: center;color: white;">
+
+<div class="a" >
+<div class="b" >
+<h1>From the Makers</h1>
+<p style="padding-top: 10px;">Themes for World 2021</p>
+<p>E - Commerce templates</p>
+<p>Themes for World 2021</p>
+<p>Themes for World 2021</p>
+</div>
+
+<div class="c" >
+  <img style="width: 60%;margin-left: 20%;margin-bottom: 20px;" src="https://lh3.googleusercontent.com/a-/AOh14GiAELd0dbwboWObqEvYgy8guTS7yJeRpxw9hNdO=s288-p-rw-no">
+  <p>Subhransu Patra</p>
+  <p>Designer and builder</p>
+  <p>I am Subhransu Patra, a 13 year old student who loves to code. I live in Kolkata, India. <a class="bn" href="https://informourworld.w3spaces.com/"> Website</a> of mine, please do check it out</p>
+</div>
+
+<div class="d" >
+  <img style="width: 60%;margin-left: 20%;margin-bottom: 20px;" src="https://lh3.googleusercontent.com/a-/AOh14GiMMYrc738sCbBnBh_L2XQDTtVug5UMBkUVmd5M=s288-p-rw-no">
+  <p>Sumanta Kumar Adhek</p>
+  <p>Planner and Builder</p>
+  <p>Sumanta Kr. Adhek, aged 12, Front - end Web Developer. Living in Kolkata, West Bengal, India. I ❤ India. My Portfolio : <a class="bn" href="https://sumantaportfolio.netlify.app/">WEBSITE</a></p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+function c() {
+let x = document.getElementById("search")
+x.style.left = "-300%";
+}
+
+function search() {
+let x = document.getElementById("search")
+x.style.left = "80px";
+}
+
+function a() {
+let x = document.getElementById("navbar")
+x.style.width = "170%";
+}
+
+function b() {
+let x = document.getElementById("navbar")
+x.style.width = "50%";
+}
+
+</script>
+
+</body>
+</html>
